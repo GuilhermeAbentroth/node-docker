@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: [docker]
+    runs-on: [teste]
 
     steps:
       - name: Fazendo download do repositório no Gitea
