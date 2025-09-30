@@ -3,7 +3,7 @@ name: Build Express API Docker
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Fazendo download do repositório no Gitea
         run: |
-          git clone --branch master http://"${{ secrets.ACTION_USERNAME }}":"${{ secrets.ACTION_PASSWORD }}"@"${{ secrets.BASE_PATH_SERVER }}"/"${{ gitea.repository }}".git .
+          git clone --branch main http://"${{ secrets.ACTION_USERNAME }}":"${{ secrets.ACTION_PASSWORD }}"@"${{ secrets.BASE_PATH_SERVER }}"/"${{ gitea.repository }}".git .
           echo http://"${{ secrets.ACTION_USERNAME }}":"${{ secrets.ACTION_PASSWORD }}"@"${{ secrets.BASE_PATH_SERVER }}"/"${{ gitea.repository }}".git
 
       - name: Fazendo login no registry do Gitea
